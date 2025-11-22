@@ -900,7 +900,17 @@ def clear_all_jobs():
             'success': False,
             'error': str(e)
         }), 500
-
+@app.route('/db-test')
+def db_test():
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute("SELECT 1")
+        cur.close()
+        conn.close()
+        return "DB OK", 200
+    except Exception as e:
+        return str(e), 500
 # -------------------------
 # Main Execution
 if __name__ == "__main__":
