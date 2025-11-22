@@ -3,9 +3,11 @@ services:
     name: indeed-scraper
     env: python
     region: oregon
+
     buildCommand: |
       pip install -r requirements.txt
-      playwright install chromium
+      python -m playwright install chromium
+
     startCommand: ./start.sh
 
     envVars:

@@ -9,3 +9,4 @@ fake-useragent
 psycopg2-binary
 google-generativeai
 gunicorn
+psutil
