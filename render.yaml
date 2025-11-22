@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: indeed-scraper
+    env: python
+    region: oregon
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
+    startCommand: ./start.sh
+
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_PORT
+        value: "5432"
+      - key: GEMINI_API_KEY
+        sync: false

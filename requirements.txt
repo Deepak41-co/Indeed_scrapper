@@ -1,0 +1,11 @@
+Flask
+flask-cors
+requests
+pandas
+beautifulsoup4
+playwright
+playwright-stealth
+fake-useragent
+psycopg2-binary
+google-generativeai
+gunicorn
